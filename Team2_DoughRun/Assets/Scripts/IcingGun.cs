@@ -8,8 +8,11 @@ public class IcingGun : MonoBehaviour
     public GameObject projectile;
     public Transform gunTip;
     private float gunCooldown = 0.2f;
-    private float shootTimer = 0.2f;
+    private float shootTimer = 0f;
     private float bulletSpeed = 50f;
+
+    private int clipSize = 100;
+    private int ammo = 100;
 
     private Vector3 aimDirection;
     // Start is called before the first frame update
@@ -37,16 +40,19 @@ public class IcingGun : MonoBehaviour
     }
 
     private void HandleShooting() {
-
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0 && Input.GetMouseButton(0)) {
-            Fire();
-            shootTimer = gunCooldown;
+            if (ammo > 0) {
+                Fire();
+                shootTimer = gunCooldown;
+                ammo--;
+            }
         }
     }
 
     private void Fire() {
-        GameObject bullet = Instantiate(projectile, gunTip.position, transform.rotation);
+
+        GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
         bullet.GetComponent<Bullet>().setSpeedDirection(bulletSpeed, transform.right);
     }
 }

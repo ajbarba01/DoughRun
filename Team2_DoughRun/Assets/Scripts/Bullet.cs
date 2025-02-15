@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     float speed = 10f;
+    private float damage = 5f;
     private Rigidbody2D rb;
 
     void Awake()
@@ -25,6 +26,13 @@ public class Bullet : MonoBehaviour
     {
         speed = newSpeed;
         rb.velocity = direction * speed;
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Enemy")) {
+            other.gameObject.GetComponent<Health>().takeDamage(damage);
+            onHit();
+        }
     }
 
     void onHit() {
