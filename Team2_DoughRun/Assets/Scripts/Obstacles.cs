@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Obstacles : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Example: Check if the colliding object has a specific tag
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player hit the obstacle!");
+        }
     }
 }

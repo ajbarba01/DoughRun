@@ -55257,6 +55257,7 @@ GameObject:
   - component: {fileID: 932580105}
   - component: {fileID: 932580104}
   - component: {fileID: 932580103}
+  - component: {fileID: 932580106}
   m_Layer: 0
   m_Name: Obstacles
   m_TagString: Untagged
@@ -56142,6 +56143,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!65 &932580106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932580101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 59, y: 46, z: 0}
+  m_Center: {x: 0.5, y: -5, z: 0}
 --- !u!1 &1351835215
 GameObject:
   m_ObjectHideFlags: 0
