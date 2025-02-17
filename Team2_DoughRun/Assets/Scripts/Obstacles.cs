@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Obstacles : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    public float damage = 10;
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
+        Debug.Log("Collision detected with: " + other.gameObject.name);
         
         // Example: Check if the colliding object has a specific tag
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player hit the obstacle!");
+            Health playerHealth = other.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.takeDamage(damage);  // Reduce health
+                Debug.Log("Player hit the obstacle!");
+            }
         }
     }
 }
