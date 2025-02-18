@@ -17,6 +17,26 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = Vector2.zero; // Reset movement every frame
 
+        int vertical = 0;
+        int horizontal = 0;
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
+            vertical++;
+        }
+
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+            vertical--;
+        }
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+            horizontal--;
+        }
+
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+            horizontal++;
+        }
+
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             moveInput = Vector2.up;
@@ -37,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
             moveInput = Vector2.right;
             spriteRenderer.sprite = rightSprite;
         }
+
+        moveInput.x = horizontal;
+        moveInput.y = vertical;
+        moveInput.Normalize();
     }
 
     void FixedUpdate()
