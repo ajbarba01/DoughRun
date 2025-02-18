@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ArbertScene.unity
     guid: 0e8329979d3c6c1488a0ad8ae02e24ac
+  - enabled: 1
+    path: Assets/Scenes/JayScene.unity
+    guid: 2ceb54587ba9df44489fcbb4af05e627
   m_configObjects: {}
