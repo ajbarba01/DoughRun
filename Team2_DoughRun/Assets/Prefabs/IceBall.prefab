@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4121756697038904509}
   - component: {fileID: 6925468899620138700}
   m_Layer: 0
-  m_Name: IceBall
+  m_Name: IceBallArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,8 +179,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2112147703
-  m_SortingLayer: 3
+  m_SortingLayerID: -241985019
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fa073803bd234d94f9472a66b14caff6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
