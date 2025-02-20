@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
     public float health = 100;
     public float maxHealth = 100;
 
@@ -21,5 +20,9 @@ public class Health : MonoBehaviour
         if (health > maxHealth) {
             health = maxHealth;
         }
+    }
+
+    public float getPercentage() {
+        return health / maxHealth;
     }
 }
