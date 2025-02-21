@@ -7,9 +7,10 @@ public class IcingGun : MonoBehaviour
 
     public GameObject projectile;
     public Transform gunTip;
-    private float gunCooldown = 0.05f;
+    public float fireRate = 0.5f;
+    public float bulletSpeed = 20f;
+    
     private float shootTimer = 0f;
-    private float bulletSpeed = 25f;
 
     private int clipSize = 25;
     private int ammo;
@@ -17,6 +18,7 @@ public class IcingGun : MonoBehaviour
     private float reloadTime = 2f;
 
     private Vector3 aimDirection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,7 @@ public class IcingGun : MonoBehaviour
         if (shootTimer <= 0 && Input.GetMouseButton(0)) {
             if (ammo > 0) {
                 Fire();
-                shootTimer = gunCooldown;
+                shootTimer = fireRate;
                 ammo--;
             }
             else {

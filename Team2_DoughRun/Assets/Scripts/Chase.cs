@@ -10,10 +10,10 @@ public class Chase : MonoBehaviour
     GameObject gameHandler;
 
     private float distance;
-    private float attackRange = 2f;
-    private float attackCooldown = 2f;
+    public float attackRange = 2f;
+    public float attackCooldown = 2f;
     private float attackTimer;
-    private float attackDamage = 50f;
+    public float attackDamage = 10f;
     // Start is called before the first frame update
     void Start()
     {
