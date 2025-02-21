@@ -2976,11 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da15a9d2e6bf274fa119569bac33b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  currentHealth: 100
-=======
   currentHealth: 0
->>>>>>> Stashed changes
   MaxBaseHealth: 100
 --- !u!4 &741074255
 Transform:
