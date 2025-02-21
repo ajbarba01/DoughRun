@@ -7,14 +7,17 @@ public class Chase : MonoBehaviour
     public GameObject player; 
     public float moveSpeed;
 
+    GameObject gameHandler;
+
     private float distance;
     private float attackRange = 2f;
     private float attackCooldown = 2f;
     private float attackTimer;
+    private float attackDamage = 50f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameHandler = GameObject.FindWithTag("GameController");
     }
 
     // Update is called once per frame
@@ -39,7 +42,9 @@ public class Chase : MonoBehaviour
         attackTimer -= Time.deltaTime;
         if (attackTimer <= 0) {
             attackTimer = attackCooldown;
-            Debug.Log("ATTACK");
+            if (gameHandler != null) {
+                gameHandler.GetComponent<Health>().takeDamage(attackDamage);
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
         health -= damage;
         if (health <= 0) {
             health = 0;
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -24,5 +24,9 @@ public class Health : MonoBehaviour
 
     public float getPercentage() {
         return health / maxHealth;
+    }
+
+    public virtual void Die() {
+        Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8482715499319218715}
   - component: {fileID: -2537728963023039656}
-  - component: {fileID: 7127356350808810963}
+  - component: {fileID: -1864028983437910661}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: GameController
@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f3a944408cea94bb6deb479ea4ba8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseHealth: {fileID: 0}
   endTitle: {fileID: 0}
---- !u!114 &7127356350808810963
+--- !u!114 &-1864028983437910661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +56,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4584319024207099890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a31025da7474f448974279954f8fc11, type: 3}
+  m_Script: {fileID: 11500000, guid: d11aaaa94e5032b4eb3b54c7dace2536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100

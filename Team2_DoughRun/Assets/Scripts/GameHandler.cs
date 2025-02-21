@@ -26,7 +26,7 @@ public class GameHandler : MonoBehaviour
     }
 
     public void NewWorld() {
-        SceneManager.LoadScene("ArbertScene");
+        SceneManager.LoadScene("BaseScene");
     }
 
     public void Quit() {
@@ -42,18 +42,17 @@ public class GameHandler : MonoBehaviour
         endTitle.text = "YOU WON";
     }
 
-    
     public void Lose() {
         SceneManager.LoadScene("EndMenu");
         endTitle.text = "YOU LOST";
     }
     public void WinLevel() {
-        baseHealth.takeDamage(10f);
         SceneManager.LoadScene("BaseScene");
+        baseHealth.takeDamage(10f);
     }
     public void LoseLevel() {
-        baseHealth.takeDamage(20f);
         SceneManager.LoadScene("BaseScene");
+        baseHealth.takeDamage(20f);
     }
 
     public void MainMenu() {

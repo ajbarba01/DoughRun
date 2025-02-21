@@ -60,7 +60,7 @@ public class IcingGun : MonoBehaviour
 
     private void Fire() {
 
-        GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
+        GameObject bullet = Instantiate(projectile, gunTip.position, transform.rotation);
         bullet.GetComponent<Bullet>().setSpeedDirection(bulletSpeed, transform.right);
     }
 
