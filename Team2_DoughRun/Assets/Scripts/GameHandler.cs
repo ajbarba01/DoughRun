@@ -6,6 +6,7 @@ using TMPro;
 
 public class GameHandler : MonoBehaviour
 {
+    public BaseHealth baseHealth;
     public TextMeshProUGUI endTitle;
 
     bool paused;
@@ -41,9 +42,18 @@ public class GameHandler : MonoBehaviour
         endTitle.text = "YOU WON";
     }
 
+    
     public void Lose() {
         SceneManager.LoadScene("EndMenu");
         endTitle.text = "YOU LOST";
+    }
+    public void WinLevel() {
+        baseHealth.takeDamage(10f);
+        SceneManager.LoadScene("BaseScene");
+    }
+    public void LoseLevel() {
+        baseHealth.takeDamage(20f);
+        SceneManager.LoadScene("BaseScene");
     }
 
     public void MainMenu() {
