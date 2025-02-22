@@ -1,24 +1,41 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
-public class Obstacles : MonoBehaviour
-{
-    public float damage = 10;
+public class DamageSlow : MonoBehaviour {
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Collision detected with: " + other.gameObject.name);
-        
-        // Example: Check if the colliding object has a specific tag
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Health playerHealth = other.GetComponent<Health>();
-            if (playerHealth != null)
-            {
-                playerHealth.takeDamage(damage);  // Reduce health
-                Debug.Log("Player hit the obstacle!");
-            }
-        }
-    }
+       public int damage = 1;
+       public float damageTime = 0.5f;
+       private bool isDamaging = false;
+       private float damageTimer = 0f;
+       private GameHandler gameHandlerObj;
+
+       void Start () {
+         if (GameObject.FindWithTag ("GameController") != null) {
+            gameHandlerObj = GameObject.FindWithTag ("GameController").GetComponent<GameHandler>();
+         }
+       }
+
+       void FixedUpdate(){
+              if (isDamaging == true){
+                     damageTimer += 0.1f;
+                     if (damageTimer >= damageTime){
+                            gameHandlerObj.GetComponent<Health>().takeDamage(damage);
+                            damageTimer = 0f;
+                     }
+              }
+       }
+
+       void OnTriggerStay2D(Collider2D other){
+              if (other.gameObject.tag == "Player") {
+                     isDamaging = true;
+                     Debug.Log("Contact with fire");
+              }
+       }
+
+       void OnTriggerExit2D(Collider2D other){
+              if (other.gameObject.tag == "Player") {
+                     isDamaging = false;
+              }
+       }
 }
