@@ -142,6 +142,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242180911970834221, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 242180911970834221, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 242180911970834221, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 242180911970834221, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4925067290624633055, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -201,6 +217,22 @@ PrefabInstance:
     - target: {fileID: 8600400260193918157, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949227917743435241, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9324551
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949227917743435241, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_Size.y
+      value: 3.6381335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949227917743435241, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.041481018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949227917743435241, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.032763243
       objectReference: {fileID: 0}
     - target: {fileID: 8949227917743435241, guid: e9c54dedef0f6c943a4fc37582d150b7, type: 3}
       propertyPath: m_IsTrigger
@@ -73552,6 +73584,10 @@ PrefabInstance:
     - target: {fileID: 3653033612569546729, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008159927952649979, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6908621191431505671, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
       propertyPath: player
