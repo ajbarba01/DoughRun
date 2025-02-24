@@ -82715,6 +82715,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2537728963023039656, guid: 318163d53eb39074cb671a84a71af5d7, type: 3}
+      propertyPath: baseHealth
+      value: 
+      objectReference: {fileID: 2735252367469523411, guid: 7d7c07e53121e704da7267ca3ad78545, type: 3}
     - target: {fileID: 4584319024207099890, guid: 318163d53eb39074cb671a84a71af5d7, type: 3}
       propertyPath: m_Name
       value: GameHandler
