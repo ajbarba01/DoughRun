@@ -9,20 +9,14 @@ public class GameHandler : MonoBehaviour
     public BaseHealth baseHealth;
     public TextMeshProUGUI endTitle;
 
-    bool paused;
     // Start is called before the first frame update
     void Start()
     {
-        paused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseAndPlay();
-        }
     }
 
     public void NewWorld() {
@@ -57,17 +51,5 @@ public class GameHandler : MonoBehaviour
 
     public void MainMenu() {
         SceneManager.LoadScene("MainMenu");
-    }
-
-// THIS SHOULD ONLY DO SOMETHING WHEN IN WORLD (not menus)
-    public void PauseAndPlay() {
-        paused = !paused;
-        if (paused) {
-            Time.timeScale = 0f;
-        }
-
-        else {
-            Time.timeScale = 1f;
-        }
     }
 }

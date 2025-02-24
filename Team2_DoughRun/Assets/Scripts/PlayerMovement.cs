@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Pause.isPaused) {
+            return;
+        }
         moveInput = Vector2.zero; // Reset movement every frame
 
         // Movement Input
