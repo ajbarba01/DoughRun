@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
     }
 
     void onHit() {
-        Instantiate(hitFX, transform.position, Quaternion.identity);
+        Destroy(Instantiate(hitFX, transform.position, Quaternion.identity), 1f);
         // Play sfx...
         Destroy(gameObject);
     }

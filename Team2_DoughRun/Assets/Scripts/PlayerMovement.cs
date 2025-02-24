@@ -4,15 +4,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     private Vector2 moveInput;
-    private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rb;  // Reference to Rigidbody2D
-
-    public Sprite upSprite, downSprite, leftSprite, rightSprite; // Assign these in Unity
+    public SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+    
+    public Sprite upSprite, downSprite, leftSprite, rightSprite;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D component
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -20,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         if (Pause.isPaused) {
             return;
         }
-        moveInput = Vector2.zero; // Reset movement every frame
+        moveInput = Vector2.zero;
 
         // Movement Input
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
@@ -40,14 +39,13 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.sprite = rightSprite;
         }
 
-        moveInput.Normalize(); // Ensure diagonal movement is not faster
+        moveInput.Normalize();
     }
 
     void FixedUpdate()
     {
-        if (moveInput != Vector2.zero) // Move only if a key is pressed
+        if (moveInput != Vector2.zero)
         {
-            // Using MovePosition to directly set the position
             rb.MovePosition(rb.position + moveInput * speed * Time.fixedDeltaTime);
         }
     }
