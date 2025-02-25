@@ -3,7 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class DoorInteraction : MonoBehaviour
 {
+    public GameObject gameHandler;
     public string nextSceneName; // The name of the scene to transition to
+
+
+    private void Start() {
+        gameHandler = GameObject.FindWithTag("GameController");
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,9 +18,7 @@ public class DoorInteraction : MonoBehaviour
 
         if (other.CompareTag("Player"))  // Make sure to tag your player
         {
-            Debug.Log("JHERE");
-            // You can load the next scene or perform other actions
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+            gameHandler.GetComponent<GameHandler>().LevelSelect();
         }
     }
 }

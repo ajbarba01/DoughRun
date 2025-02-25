@@ -52,4 +52,12 @@ public class GameHandler : MonoBehaviour
     public void MainMenu() {
         SceneManager.LoadScene("MainMenu");
     }
+    
+    public void LevelSelect() {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void SelectLevel(int level) {
+        SceneManager.LoadScene("Level" + level.ToString());
+    }
 }
