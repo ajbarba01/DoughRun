@@ -198,6 +198,14 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5553316577179197866, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553316577179197866, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 6908621191431505671, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
       propertyPath: player
       value: 

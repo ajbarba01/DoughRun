@@ -73676,6 +73676,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1093550801}
+    - target: {fileID: 6908621191431505671, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908621191431505671, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908621191431505671, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995599190942752229, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 813a91880c5cde044971f339f1627558, type: 3}
     - target: {fileID: 6995599190942752229, guid: d4cf4c918f32efd4294ae0f9e4d967af, type: 3}
       propertyPath: m_SortingLayer
       value: 3
