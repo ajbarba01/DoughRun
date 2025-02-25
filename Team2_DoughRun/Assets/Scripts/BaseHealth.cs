@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BaseHealth : MonoBehaviour
 {
-    public float currentHealth = 100f;
+    public static float currentHealth = 100f;
 
     public float MaxBaseHealth = 100f;
     // Start is called before the first frame update
