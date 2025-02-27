@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Chase : MonoBehaviour
 {
-    public GameObject player; 
-    public float moveSpeed;
 
     GameObject gameHandler;
+    GameObject player;
 
+    public float moveSpeed = 4f;
     private float distance;
     public float attackRange = 2f;
     public float attackCooldown = 2f;
@@ -18,6 +18,7 @@ public class Chase : MonoBehaviour
     void Start()
     {
         gameHandler = GameObject.FindWithTag("GameController");
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
