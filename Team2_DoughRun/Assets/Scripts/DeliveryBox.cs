@@ -9,6 +9,7 @@ public class DeliveryBox : MonoBehaviour
 
     void Start()
     {
+        
     }
     void Update()
     { 
