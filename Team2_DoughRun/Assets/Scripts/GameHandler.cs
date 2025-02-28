@@ -11,10 +11,14 @@ public class GameHandler : MonoBehaviour
     public int deliveries;
     public List<List<DeliveryBox>> neighborhoods;
     public DeliveryBox curr_delivery;
+    private List<DeliveryBox> n;
 
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < 3; i++) {
+            neighborhoods.Add(n);
+        }
     }
 
     // Update is called once per frame
@@ -42,6 +46,7 @@ public class GameHandler : MonoBehaviour
     public void Lose() {
         SceneManager.LoadScene("EndMenu");
         endTitle.text = "YOU LOST";
+        neighborhoods.Clear();
     }
     public void WinLevel() {
         SceneManager.LoadScene("BaseScene");
@@ -70,5 +75,9 @@ public class GameHandler : MonoBehaviour
         if (deliveries == 0) {
             WinLevel();
         }
+    }
+
+    public void AddHouse(DeliveryBox house) {
+        neighborhoods[house.level].Add(house);
     }
 }
