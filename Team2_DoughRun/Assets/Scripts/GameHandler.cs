@@ -8,6 +8,9 @@ public class GameHandler : MonoBehaviour
 {
     public BaseHealth baseHealth;
     public TextMeshProUGUI endTitle;
+    public int deliveries;
+    public List<List<DeliveryBox>> neighborhoods;
+    public DeliveryBox curr_delivery;
 
     // Start is called before the first frame update
     void Start()
@@ -59,5 +62,13 @@ public class GameHandler : MonoBehaviour
 
     public void SelectLevel(int level) {
         SceneManager.LoadScene("Level" + level.ToString());
+        deliveries = 5;
+    }
+
+    public void completeDelivery() {
+        deliveries--;
+        if (deliveries == 0) {
+            WinLevel();
+        }
     }
 }
