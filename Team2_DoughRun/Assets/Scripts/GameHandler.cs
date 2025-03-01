@@ -13,6 +13,8 @@ public class GameHandler : MonoBehaviour
     public DeliveryBox curr_delivery;
     private List<DeliveryBox> n;
 
+    public static int money;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class GameHandler : MonoBehaviour
     public void WinLevel() {
         SceneManager.LoadScene("BaseScene");
         baseHealth.takeDamage(10f);
+        money += 5;
     }
     public void LoseLevel() {
         SceneManager.LoadScene("BaseScene");
@@ -80,4 +83,21 @@ public class GameHandler : MonoBehaviour
     public void AddHouse(DeliveryBox house) {
         neighborhoods[house.level].Add(house);
     }
+
+
+    public bool SpendMoney(int cost)
+    {
+        if (money >= cost)
+        {
+            money -= cost;
+            Debug.Log("Coins spent. Remaining: " + money);
+            return true;
+        }
+        else
+        {
+            Debug.Log("Not enough coins!");
+            return false;
+        }
+    }
 }
+
