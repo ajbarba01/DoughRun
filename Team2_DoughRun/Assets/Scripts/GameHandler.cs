@@ -13,7 +13,7 @@ public class GameHandler : MonoBehaviour
     public DeliveryBox curr_delivery;
     private List<DeliveryBox> n;
 
-    public static int money;
+    public static int money = 100;
 
     // Start is called before the first frame update
     void Start()

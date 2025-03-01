@@ -49,4 +49,10 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(rb.position + moveInput * speed * Time.fixedDeltaTime);
         }
     }
+
+    public void increaseSpeed(float increase)
+    {
+        speed += increase;
+        Debug.Log("Speed Upgraded! New Speed: " + speed);
+    }
 }

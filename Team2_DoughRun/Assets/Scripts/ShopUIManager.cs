@@ -9,8 +9,17 @@ public class ShopUIManager : MonoBehaviour
 
     public GameHandler gameHandler;
 
+    private PlayerMovement playerMovement;
     public BaseHealth baseHealth;
 
+    public void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerMovement = player.GetComponent<PlayerMovement>();
+        }
+    }
     public void CloseShop()
     {
         shopUI.SetActive(false);
@@ -20,6 +29,14 @@ public class ShopUIManager : MonoBehaviour
         if(gameHandler.SpendMoney(10))
         {
             baseHealth.healHealth(10);
+        }
+    }
+
+    public void UpgradeMoveSpeed()
+    {
+        if (gameHandler.SpendMoney(10))
+        {
+            playerMovement.increaseSpeed(5);
         }
     }
 }
