@@ -12,6 +12,8 @@ public class ShopUIManager : MonoBehaviour
     private PlayerMovement playerMovement;
     public BaseHealth baseHealth;
 
+    private IcingGun icingGun;
+
     public void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -37,6 +39,13 @@ public class ShopUIManager : MonoBehaviour
         if (gameHandler.SpendMoney(10))
         {
             playerMovement.increaseSpeed(5);
+        }
+    }
+    public void UpgradeAttackSpeed()
+    {
+        if(gameHandler.SpendMoney(10))
+        {
+            icingGun.upAttackSpeed();
         }
     }
 }

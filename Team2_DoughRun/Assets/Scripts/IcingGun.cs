@@ -81,4 +81,8 @@ public class IcingGun : MonoBehaviour
     public int GetAmmo() {
         return ammo;
     }
+    public void upAttackSpeed()
+    {
+        fireRate -= .5f;
+    }
 }
