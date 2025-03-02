@@ -8,18 +8,23 @@ public class GameHandler : MonoBehaviour
 {
     public BaseHealth baseHealth;
     public TextMeshProUGUI endTitle;
-    public int deliveries;
     public List<List<DeliveryBox>> neighborhoods;
     public DeliveryBox curr_delivery;
-    private List<DeliveryBox> n;
 
+    public static int deliveries;
     public static int money;
 
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    // Called when script is loaded
+    void Awake() {
+
+        neighborhoods = new List<List<DeliveryBox>>();
         for (int i = 0; i < 3; i++) {
-            neighborhoods.Add(n);
+            neighborhoods.Add(new List<DeliveryBox>());
         }
     }
 
@@ -75,13 +80,18 @@ public class GameHandler : MonoBehaviour
 
     public void completeDelivery() {
         deliveries--;
-        if (deliveries == 0) {
+        if (deliveries <= 0) {
             WinLevel();
         }
     }
 
     public void AddHouse(DeliveryBox house) {
-        neighborhoods[house.level].Add(house);
+        neighborhoods[house.level - 1].Add(house);
+    }
+
+    public DeliveryBox getCurrent_Delivery(int level) {  
+        curr_delivery = neighborhoods[level - 1][Random.Range(0, neighborhoods[level - 1].Count)];
+        return curr_delivery;
     }
 
 

@@ -29,7 +29,7 @@ public class DamageSlow : MonoBehaviour {
        void OnTriggerStay2D(Collider2D other){
               if (other.gameObject.tag == "Player") {
                      isDamaging = true;
-                     Debug.Log("Contact with fire");
+                     //Debug.Log("Contact with fire");
               }
        }
 
