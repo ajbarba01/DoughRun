@@ -22,10 +22,22 @@ public class ShopUIManager : MonoBehaviour
             playerMovement = player.GetComponent<PlayerMovement>();
         }
     }
+    
     public void CloseShop()
     {
         shopUI.SetActive(false);
+        Pause.Unfreeze();
+        Pause.Unlock();
+        
     }
+
+    public void OpenShop()
+    {
+        shopUI.SetActive(true);
+        Pause.Freeze();
+        Pause.Lock();
+    }
+
     public void UpgradeBaseHealth()
     {
         if(gameHandler.SpendMoney(10))
