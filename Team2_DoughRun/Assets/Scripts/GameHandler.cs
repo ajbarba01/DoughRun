@@ -21,7 +21,6 @@ public class GameHandler : MonoBehaviour
 
     // Called when script is loaded
     void Awake() {
-
         neighborhoods = new List<List<DeliveryBox>>();
         for (int i = 0; i < 3; i++) {
             neighborhoods.Add(new List<DeliveryBox>());
@@ -33,7 +32,7 @@ public class GameHandler : MonoBehaviour
     {
     }
 
-    public void NewWorld() {
+    public void BaseScene() {
         SceneManager.LoadScene("BaseScene");
     }
 
