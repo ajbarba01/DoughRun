@@ -5,8 +5,8 @@ using UnityEngine;
 public class Chase : MonoBehaviour
 {
 
-    GameObject gameHandler;
-    GameObject player;
+    protected GameObject gameHandler;
+    protected GameObject player;
 
     public float moveSpeed = 4f;
     private float distance;
@@ -39,51 +39,15 @@ public class Chase : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, angle - 90);
     }
 
-    //void attack() {
-    //    attackTimer -= Time.deltaTime;
-    //    if (attackTimer <= 0) {
-    //        attackTimer = attackCooldown;
-    //        if (gameHandler != null) {
-    //            gameHandler.GetComponent<Health>().takeDamage(attackDamage);
-    //        }
-    //    }
-    //}
-
-    void attack()
+    protected virtual void attack()
     {
         attackTimer -= Time.deltaTime;
         if (attackTimer <= 0)
         {
             attackTimer = attackCooldown;
-
-            // First, do your usual direct damage
             if (gameHandler != null)
             {
                 gameHandler.GetComponent<Health>().takeDamage(attackDamage);
-            }
-
-            // Then, if you want to poison the same object:
-            // 1) Find the same GameObject that has the Health script
-            //    (e.g. your "GameController" if that’s actually holding the Health)
-            Health targetHealth = gameHandler.GetComponent<Health>();
-            if (targetHealth != null)
-            {
-                // 2) Check if the PoisonEffect script is already on it
-                PoisonEffect poison = targetHealth.GetComponent<PoisonEffect>();
-                if (poison == null)
-                {
-                    // If not, add it
-                    poison = targetHealth.gameObject.AddComponent<PoisonEffect>();
-                }
-
-                // OPTIONAL: If you want to override the default poison settings
-                // each time you apply it, do it here:
-                poison.poisonDuration = 5f;       // 5 seconds
-                poison.poisonTickDamage = 2f;     // damage each tick
-                poison.poisonTickInterval = 1f;   // seconds between ticks
-
-                // If you want it to “restart” the timer each time the rat hits:
-                // you could remove and re-add the script, or force a restart method.
             }
         }
     }
