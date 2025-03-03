@@ -1,15 +1,11 @@
 using UnityEngine;
 
-/// <summary>
-/// A specialized chase script that inherits from Chase,
-/// then adds poison damage on top of the normal attack.
-/// </summary>
 public class PoisonChase : Chase
 {
     [Header("Poison Settings")]
-    public float poisonDuration = 5f;       // How long poison lasts
-    public float poisonTickDamage = 5f;     // Damage per poison tick
-    public float poisonTickInterval = 1f;   // Seconds between each poison tick
+    public float poisonDuration = 5f; // How long poison lasts
+    public float poisonTickDamage = 5f; // Damage per poison tick
+    public float poisonTickInterval = 1f; // Seconds between each poison tick
 
     // Override the attack method from Chase
     protected override void attack()
