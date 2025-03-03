@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class ShopUIManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,6 +13,8 @@ public class ShopUIManager : MonoBehaviour
     public BaseHealth baseHealth;
 
     private IcingGun icingGun;
+
+    public TextMeshProUGUI messageText;
 
     public void Start()
     {
@@ -59,5 +61,15 @@ public class ShopUIManager : MonoBehaviour
         {
             icingGun.upAttackSpeed();
         }
+    }
+    public void ShowMessage(string Message)
+    {
+        messageText.text = Message;
+        CancelInvoke(nameof(ClearMessage));
+        Invoke(nameof(ClearMessage), 2f);
+    }
+    private void ClearMessage()
+    {
+        messageText.text = "";
     }
 }
