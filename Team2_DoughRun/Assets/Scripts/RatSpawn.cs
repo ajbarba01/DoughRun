@@ -33,7 +33,7 @@ public class RatSpawn : MonoBehaviour
     private IEnumerator SpawnCooldown()
     {
         canSpawn = false;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         canSpawn = true;
     }
 }
