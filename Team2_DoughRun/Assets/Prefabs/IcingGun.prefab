@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 1164578906903789607}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8450384157916016217
 MonoBehaviour:
@@ -47,8 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1768598058805438819, guid: 1af1c59693132174581c024422d9896f, type: 3}
   gunTip: {fileID: 5559344855667166463}
-  fireRate: 0.5
+  fireRate: 0.2
   bulletSpeed: 20
+  damage: 20
+  clipSize: 15
 --- !u!1 &5872977954981563101
 GameObject:
   m_ObjectHideFlags: 0

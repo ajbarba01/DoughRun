@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     float speed = 10f;
-    private float damage = 25f;
+    private float damage;
     private Rigidbody2D rb;
     public float destroyAfter = 0.5f;
 
@@ -23,6 +23,10 @@ public class Bullet : MonoBehaviour
         setSpeedDirection(speed, direction);
 
         StartCoroutine(selfDestructAfter());
+    }
+
+    public void SetDamage(float dmg) {
+        damage = dmg;
     }
 
     public void setSpeedDirection(float newSpeed, Vector3 direction)
