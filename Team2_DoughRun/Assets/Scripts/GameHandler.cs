@@ -9,6 +9,8 @@ public class GameHandler : MonoBehaviour
     public BaseHealth baseHealth;
     public TextMeshProUGUI endTitle;
 
+    public ShopUIManager shopUIManager;
+
     public static int deliveries;
     public static int money;
 
@@ -23,6 +25,7 @@ public class GameHandler : MonoBehaviour
     }
 
     public void BaseScene() {
+        baseHealth.healHealth(100);
         SceneManager.LoadScene("BaseScene");
     }
 
@@ -78,12 +81,12 @@ public class GameHandler : MonoBehaviour
         if (money >= cost)
         {
             money -= cost;
-            Debug.Log("Coins spent. Remaining: " + money);
+            shopUIManager.ShowMessage("Coins spent. Remaining: " + money);
             return true;
         }
         else
         {
-            Debug.Log("Not enough coins!");
+            shopUIManager.ShowMessage("Not enough coins!");
             return false;
         }
     }
