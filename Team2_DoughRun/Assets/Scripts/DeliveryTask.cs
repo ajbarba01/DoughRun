@@ -11,22 +11,19 @@ public class DeliveryTask : MonoBehaviour
     public TextMeshProUGUI RemDelivery;
 
     public List<DeliveryBox> neighborhood;
-    public int level;
+    public int numHouses;
     
     public GameObject deliveryProgress;
     public Image progressImage;
 
     GameObject gameHandler;
-    DeliveryBox currD;
+    public DeliveryBox currD;
 
     // Start is called before the first frame update
     void Start()
     {
         gameHandler = GameObject.FindWithTag("GameController");
         RemDelivery.text = "Remaining Deliveries: " + GameHandler.deliveries.ToString();
-        currD = gameHandler.GetComponent<GameHandler>().getCurrent_Delivery(level);
-
-        CurrDelivery.text = "Row: " + currD.row.ToString() + " Col: " + currD.col.ToString();
     }
 
     // Update is called once per frame
@@ -34,9 +31,17 @@ public class DeliveryTask : MonoBehaviour
     {
     }
 
+    public void AddHouse(DeliveryBox House) {
+        neighborhood.Add(House);
+        if (neighborhood.Count >= numHouses) {
+            currD = neighborhood[Random.Range(0, neighborhood.Count)];
+            CurrDelivery.text = "Row: " + currD.row.ToString() + " Col: " + currD.col.ToString();
+        }
+    }
+
     public void newTask() {
         gameHandler.GetComponent<GameHandler>().completeDelivery();
-        currD = gameHandler.GetComponent<GameHandler>().getCurrent_Delivery(level);
+        currD = neighborhood[Random.Range(0, neighborhood.Count)];
         CurrDelivery.text = "Row: " + currD.row.ToString() + " Col: " + currD.col.ToString();
         RemDelivery.text = "Remaining Deliveries: " + GameHandler.deliveries.ToString();
     }

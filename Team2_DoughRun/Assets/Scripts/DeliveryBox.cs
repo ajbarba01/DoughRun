@@ -22,7 +22,7 @@ public class DeliveryBox : MonoBehaviour
         taskHandler = GameObject.FindWithTag("TaskHandler").GetComponent<DeliveryTask>();
         gameHandler = GameObject.FindWithTag("GameController").GetComponent<GameHandler>();
 
-        gameHandler.GetComponent<GameHandler>().AddHouse(this);
+        taskHandler.GetComponent<DeliveryTask>().AddHouse(this);
     }
     void Update()
     {
@@ -45,7 +45,7 @@ public class DeliveryBox : MonoBehaviour
         {
             //Debug.Log("In Range with box");
             inRange = true;
-            isHouse = (this == gameHandler.curr_delivery);
+            isHouse = (this == taskHandler.currD);
             if (isHouse) {
                 taskHandler.SetDelivering(true);
             }

@@ -8,8 +8,6 @@ public class GameHandler : MonoBehaviour
 {
     public BaseHealth baseHealth;
     public TextMeshProUGUI endTitle;
-    public List<List<DeliveryBox>> neighborhoods;
-    public DeliveryBox curr_delivery;
 
     public static int deliveries;
     public static int money;
@@ -17,14 +15,6 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    }
-
-    // Called when script is loaded
-    void Awake() {
-        neighborhoods = new List<List<DeliveryBox>>();
-        for (int i = 0; i < 3; i++) {
-            neighborhoods.Add(new List<DeliveryBox>());
-        }
     }
 
     // Update is called once per frame
@@ -52,7 +42,6 @@ public class GameHandler : MonoBehaviour
     public void Lose() {
         SceneManager.LoadScene("EndMenu");
         endTitle.text = "YOU LOST";
-        neighborhoods.Clear();
     }
     public void WinLevel() {
         SceneManager.LoadScene("BaseScene");
@@ -83,16 +72,6 @@ public class GameHandler : MonoBehaviour
             WinLevel();
         }
     }
-
-    public void AddHouse(DeliveryBox house) {
-        neighborhoods[house.level - 1].Add(house);
-    }
-
-    public DeliveryBox getCurrent_Delivery(int level) {  
-        curr_delivery = neighborhoods[level - 1][Random.Range(0, neighborhoods[level - 1].Count)];
-        return curr_delivery;
-    }
-
 
     public bool SpendMoney(int cost)
     {
