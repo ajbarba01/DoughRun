@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
-   public GameObject shopUI;
+   public ShopUIManager shop;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) 
         {
-            shopUI.SetActive(true); 
+            shop.OpenShop();
         }
     }
 }

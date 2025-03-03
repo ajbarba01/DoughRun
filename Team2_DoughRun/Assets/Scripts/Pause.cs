@@ -6,6 +6,7 @@ public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     public static bool isPaused;
+    public static bool locked;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,10 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (locked) {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -53,5 +58,13 @@ public class Pause : MonoBehaviour
         Unfreeze();
         pauseMenu.SetActive(false);
         AudioListener.pause = false;
+    }
+
+    public static void Lock() {
+        locked = true;
+    }
+
+    public static void Unlock() {
+        locked = false;
     }
 }

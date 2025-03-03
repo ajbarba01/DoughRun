@@ -8,28 +8,34 @@ public class DeliveryBox : MonoBehaviour
     public int col;
     public int level;
     public bool isDelivered = false;
-    private bool InRange = false;
+    private bool inRange = false;
+    private bool isHouse = false;
 
-    GameObject taskHandler;
-    GameObject gameHandler;
+    private float deliveryTime = 3f;
+    private float deliveryTimeCurr = 3f;
+
+    DeliveryTask taskHandler;
+    GameHandler gameHandler;
 
     void Start()
     {
-        taskHandler = GameObject.FindWithTag("TaskHandler");
-        gameHandler = GameObject.FindWithTag("GameController");
+        taskHandler = GameObject.FindWithTag("TaskHandler").GetComponent<DeliveryTask>();
+        gameHandler = GameObject.FindWithTag("GameController").GetComponent<GameHandler>();
 
         gameHandler.GetComponent<GameHandler>().AddHouse(this);
     }
     void Update()
     {
-        if (InRange == true && Input.GetKeyDown(KeyCode.E)) {
-            if (this == gameHandler.GetComponent<GameHandler>().curr_delivery) {
-                taskHandler.GetComponent<DeliveryTask>().newTask();
+        if (inRange && isHouse) {
+            deliveryTimeCurr -= Time.deltaTime;
+            taskHandler.SetFill((deliveryTime - deliveryTimeCurr) / deliveryTime);
+            if (deliveryTimeCurr <= 0) {
+                taskHandler.newTask();
                 Debug.Log("Delivered");
                 isDelivered = true;
-            }
-            else {
-                Debug.Log("Wrong house");
+                isHouse = false;
+                deliveryTimeCurr = deliveryTime;
+                taskHandler.SetDelivering(false);
             }
         }
     }
@@ -38,13 +44,23 @@ public class DeliveryBox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Debug.Log("In Range with box");
-            InRange = true;
+            inRange = true;
+            isHouse = (this == gameHandler.curr_delivery);
+            if (isHouse) {
+                taskHandler.SetDelivering(true);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            InRange = false;
+            inRange = false;
+            deliveryTimeCurr = deliveryTime;
+            
+            if (isHouse) {
+                taskHandler.SetDelivering(false);
+                isHouse = false;
+            }
             //Debug.Log("Out of range with box");
         }
     }

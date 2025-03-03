@@ -9,10 +9,11 @@ public class IcingGun : MonoBehaviour
     public Transform gunTip;
     public float fireRate = 0.5f;
     public float bulletSpeed = 20f;
+    public float damage = 25f;
     
     private float shootTimer = 0f;
 
-    private int clipSize = 25;
+    public int clipSize = 25;
     private int ammo;
 
     private float reloadTime = 2f;
@@ -67,6 +68,7 @@ public class IcingGun : MonoBehaviour
 
         GameObject bullet = Instantiate(projectile, gunTip.position, transform.rotation);
         bullet.GetComponent<Bullet>().setSpeedDirection(bulletSpeed, transform.right);
+        bullet.GetComponent<Bullet>().SetDamage(damage);
     }
 
     public void Reload() {

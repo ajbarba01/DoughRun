@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DeliveryTask : MonoBehaviour
@@ -11,6 +12,9 @@ public class DeliveryTask : MonoBehaviour
 
     public List<DeliveryBox> neighborhood;
     public int level;
+    
+    public GameObject deliveryProgress;
+    public Image progressImage;
 
     GameObject gameHandler;
     DeliveryBox currD;
@@ -35,5 +39,14 @@ public class DeliveryTask : MonoBehaviour
         currD = gameHandler.GetComponent<GameHandler>().getCurrent_Delivery(level);
         CurrDelivery.text = "Row: " + currD.row.ToString() + " Col: " + currD.col.ToString();
         RemDelivery.text = "Remaining Deliveries: " + GameHandler.deliveries.ToString();
+    }
+
+    public void SetDelivering(bool delivering) {
+        deliveryProgress.SetActive(delivering);
+        SetFill(0f);
+    }
+
+    public void SetFill(float fill) {
+        progressImage.fillAmount = fill;
     }
 }
