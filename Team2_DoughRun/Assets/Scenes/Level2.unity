@@ -392,6 +392,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 552748585}
     m_Modifications:
+    - target: {fileID: 1757890552183603267, guid: 51fa217033afc054d8f5acc096b1fc2b, type: 3}
+      propertyPath: numHouses
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3196197247259012474, guid: 51fa217033afc054d8f5acc096b1fc2b, type: 3}
       propertyPath: m_Name
       value: TaskHUD
