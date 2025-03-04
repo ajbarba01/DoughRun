@@ -231,9 +231,10 @@ MonoBehaviour:
   CurrDelivery: {fileID: 7106072079355330786}
   RemDelivery: {fileID: 4799504225671116907}
   neighborhood: []
-  level: 1
+  numHouses: 20
   deliveryProgress: {fileID: 2253052530789047396}
   progressImage: {fileID: 5407190186962368890}
+  currD: {fileID: 0}
 --- !u!1 &3569253071902201678
 GameObject:
   m_ObjectHideFlags: 0
