@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RatSpawn : MonoBehaviour
 {
-
-    public GameObject RatEnemy;
+    public List<GameObject> RatEnemies;
     public Transform drainLocation;
     private bool canSpawn = true;
 
@@ -24,7 +23,7 @@ public class RatSpawn : MonoBehaviour
         {
             if (canSpawn) {
                 Debug.Log("Spawning rat");
-                Instantiate(RatEnemy, drainLocation);
+                Instantiate(RatEnemies[Random.Range(0, RatEnemies.Count)], drainLocation);
                 StartCoroutine(SpawnCooldown());
             }
         }
