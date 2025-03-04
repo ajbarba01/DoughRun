@@ -691,6 +691,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endTitle: {fileID: 1183782389}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!224 &1254897593 stripped
 RectTransform:
