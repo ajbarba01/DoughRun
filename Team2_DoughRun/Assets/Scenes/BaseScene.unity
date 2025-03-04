@@ -3284,7 +3284,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 15.043765, y: 0.4958353}
+  m_Offset: {x: 14.995448, y: -1.0550516}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3295,7 +3295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1941547, y: 1.0855656}
+  m_Size: {x: 4.030096, y: 4.071384}
   m_EdgeRadius: 0
 --- !u!483693784 &822702888
 TilemapRenderer:
@@ -13533,6 +13533,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2537728963023039656, guid: 318163d53eb39074cb671a84a71af5d7, type: 3}
+      propertyPath: endTitle
+      value: 
+      objectReference: {fileID: 5670259816163472448, guid: 75b70ead974f18744951a3cff142f4e8, type: 3}
     - target: {fileID: -2537728963023039656, guid: 318163d53eb39074cb671a84a71af5d7, type: 3}
       propertyPath: baseHealth
       value: 
